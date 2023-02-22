@@ -35,7 +35,7 @@ extern "C" {
 // include:1 ends here
 
 // [[file:~/Workspace/Programming/rust-libs/l-bfgs-b-c/lbfgsb.note::*mods][mods:1]]
-mod lbfgsb;
+pub mod lbfgsb;
 // mods:1 ends here
 
 // [[file:~/Workspace/Programming/rust-libs/l-bfgs-b-c/lbfgsb.note::*exports][exports:1]]
