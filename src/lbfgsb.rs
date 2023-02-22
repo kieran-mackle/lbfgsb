@@ -18,7 +18,7 @@ fn is_fg(task: i64) -> bool {
 pub struct LbfgsbParameter {
     /// On entry m is the maximum number of variable metric corrections allowed
     /// in the limited memory matrix.
-    m: usize,
+    pub m: usize,
 
     /// The tolerances in the stopping criteria for function value.
     ///
@@ -29,7 +29,7 @@ pub struct LbfgsbParameter {
     ///
     /// where epsmch is the machine precision, which is automatically generated
     /// by the code.
-    factr: f64,
+    pub factr: f64,
 
     /// The tolerances in the stopping criteria for gradient.
     ///
@@ -39,7 +39,7 @@ pub struct LbfgsbParameter {
     ///   max{|proj g_i | i = 1, ..., n} <= pgtol
     ///
     /// where pg_i is the ith component of the projected gradient.
-    pgtol: f64,
+    pub pgtol: f64,
 
     // iprint controls the frequency and type of output generated:
     //
@@ -52,7 +52,7 @@ pub struct LbfgsbParameter {
     //
     // When iprint > 0, the file iterate.dat will be created to summarize the
     // iteration.
-    iprint: i64,
+    pub iprint: i64,
 }
 
 impl Default for LbfgsbParameter {
