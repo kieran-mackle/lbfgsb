@@ -238,7 +238,7 @@ impl<E> LbfgsbState<E>
 where
     E: FnMut(&[f64], &mut [f64]) -> Result<f64>,
 {
-    pub(crate) fn new(problem: LbfgsbProblem<E>, param: LbfgsbParameter) -> Self {
+    pub fn new(problem: LbfgsbProblem<E>, param: LbfgsbParameter) -> Self {
         let n = problem.x.len();
         let m = param.m;
         // wa is a double precision working array of length
@@ -261,7 +261,7 @@ where
         }
     }
 
-    pub(crate) fn minimize(&mut self) -> Result<()> {
+    pub fn minimize(&mut self) -> Result<()> {
         let f = &mut self.problem.f;
         let x = &mut self.problem.x;
         let g = &mut self.problem.g;
