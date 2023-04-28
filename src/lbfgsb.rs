@@ -143,20 +143,20 @@ pub struct LbfgsbState<E>
 where
     E: FnMut(&[f64], &mut [f64]) -> Result<f64>,
 {
-    problem: LbfgsbProblem<E>,
+    pub problem: LbfgsbProblem<E>,
 
-    param: LbfgsbParameter,
+    pub param: LbfgsbParameter,
 
     /// wa is a double precision working array of length:
     ///   (2mmax + 5)nmax + 12mmax^2 + 12mmax.
-    wa: Vec<f64>,
+    pub wa: Vec<f64>,
 
     // iwa is an integer working array of length 3nmax.
-    iwa: Vec<i64>,
+    pub iwa: Vec<i64>,
 
     // csave is a working string of characters of length 60.
     // static char csave[60];
-    csave: [i64; 60],
+    pub csave: [i64; 60],
     // static double dsave[29];
     //  dsave is a double precision working array of dimension 29.
     // On exit with 'task' = NEW_X, the following information is
@@ -181,7 +181,7 @@ where
     //                           the starting point of the line search;
     //   dsave(16) = the square of the 2-norm of the line search
     //                                                direction vector.
-    dsave: [f64; 29],
+    pub dsave: [f64; 29],
 
     // isave is an integer working array of dimension 44.
     //   On exit with 'task' = NEW_X, the following information is
@@ -209,7 +209,7 @@ where
     //                       active constraints in the current iteration;
     //     isave(41) = the number of variables entering the set of active
     //                     constraints in the current iteration.
-    isave: [i64; 44],
+    pub isave: [i64; 44],
     // static logical lsave[4];
     // lsave is a logical working array of dimension 4. On exit with 'task' =
     // NEW_X, the following information is available:
@@ -220,7 +220,7 @@ where
     //   If lsave(2) = .true.  then  the problem is constrained;
     //
     //   If lsave(3) = .true. then each variable has upper and lower bounds;
-    lsave: [i64; 4],
+    pub lsave: [i64; 4],
 
     // Note in original fortran version:
     //
@@ -231,7 +231,7 @@ where
     //
     // Modified L-BFGS-B to use integers instead of strings, for testing the
     // "task"
-    task: i64,
+    pub task: i64,
 }
 
 impl<E> LbfgsbState<E>
